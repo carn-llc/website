@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Carn LLC</title>
+  <meta name="description" content="Learn about Carn LLC's mission, the meaning behind the name, and meet Sean Howley, founder and sole operator." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .mission {
+      background: var(--cornsilk);
+      padding: var(--section-pad);
+    }
+    .mission-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .mission-left h2 { margin-bottom: 1.25rem; }
+    .mission-left p { color: var(--dark-moss); }
+    .mission-right {
+      background: var(--pakistan);
+      border-radius: 8px;
+      padding: 2.5rem;
+    }
+    .mission-right-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dark-moss);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .mission-right blockquote {
+      font-family: var(--font);
+      font-size: 1.2rem;
+      color: var(--earth);
+      font-style: italic;
+      line-height: 1.6;
+      border-left: 2px solid var(--dark-moss);
+      padding-left: 1.25rem;
+      margin-bottom: 1rem;
+    }
+    .mission-right p { font-size: 0.875rem; color: var(--dark-moss); }
+
+    .name-section {
+      background: var(--pakistan);
+      padding: var(--section-pad);
+    }
+    .name-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .name-label {
+      font-family: var(--font);
+      font-size: 4rem;
+      color: var(--dark-moss);
+      opacity: 0.4;
+      line-height: 1;
+    }
+    .name-content h2 { color: var(--earth); margin-bottom: 1.25rem; }
+    .name-content p { color: var(--cornsilk); opacity: 0.75; }
+    .name-content p + p { margin-top: 0.75rem; }
+
+    .principles {
+      background: var(--cornsilk);
+      padding: var(--section-pad);
+    }
+    .principles-inner { max-width: var(--max-w); margin: 0 auto; }
+    .principles-inner > h2 { margin-bottom: 0.5rem; }
+    .principles-inner > p { color: var(--dark-moss); margin-bottom: 3rem; max-width: 480px; }
+    .principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .principle-item {
+      border-top: 0.5px solid rgba(40,54,24,0.15);
+      padding: 1.75rem 2rem 1.75rem 0;
+      display: grid;
+      grid-template-columns: 2rem 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+    .principle-item:nth-child(even) { padding-left: 2rem; border-left: 0.5px solid rgba(40,54,24,0.15); }
+    .principle-item:last-child,
+    .principle-item:nth-last-child(2):nth-child(odd) { border-bottom: 0.5px solid rgba(40,54,24,0.15); }
+    .principle-num { font-size: 0.75rem; font-weight: 500; color: var(--dark-moss); padding-top: 3px; }
+    .principle-item h3 { font-size: 1rem; margin-bottom: 0.4rem; font-family: var(--font-sans); font-weight: 500; }
+    .principle-item p { font-size: 0.875rem; color: var(--dark-moss); margin: 0; }
+
+    .sean-section {
+      background: var(--earth);
+      padding: var(--section-pad);
+    }
+    .sean-inner { max-width: var(--max-w); margin: 0 auto; }
+    .sean-header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2.5rem;
+      align-items: start;
+      margin-bottom: 3rem;
+      padding-bottom: 3rem;
+      border-bottom: 0.5px solid rgba(40,54,24,0.2);
+    }
+    .sean-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: var(--pakistan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--earth);
+      font-family: var(--font);
+      font-size: 2.5rem;
+      flex-shrink: 0;
+    }
+    .sean-header-text .eyebrow { color: var(--pakistan); opacity: 0.55; }
+    .sean-header-text h2 { color: var(--pakistan); margin-bottom: 0.25rem; }
+    .sean-header-text .title { font-size: 0.875rem; color: var(--pakistan); opacity: 0.6; margin-bottom: 1.25rem; }
+    .sean-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+    .sean-links a {
+      font-size: 0.875rem;
+      color: var(--pakistan);
+      border-bottom: 1px solid var(--pakistan);
+      padding-bottom: 1px;
+      font-weight: 500;
+    }
+    .sean-bio { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 2rem; }
+    .bio-block h4 {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pakistan);
+      opacity: 0.55;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .bio-block p { font-size: 0.9rem; color: #4A3010; }
+
+    .cta-band {
+      background: var(--tigers-eye);
+      padding: 3.5rem 2rem;
+    }
+    .cta-band-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-band h2 { color: var(--cornsilk); font-size: 1.75rem; }
+    .cta-band p { color: rgba(254,250,224,0.75); margin: 0.4rem 0 0; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .mission-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .name-inner { grid-template-columns: 1fr; gap: 1rem; }
+      .name-label { font-size: 2.5rem; }
+      .principles-grid { grid-template-columns: 1fr; }
+      .principle-item:nth-child(even) { padding-left: 0; border-left: none; }
+      .sean-header { grid-template-columns: 1fr; }
+      .sean-bio { grid-template-columns: 1fr; }
+      .cta-band-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        Carn LLC
+        <span>Boulder, CO</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="nav-cta"><a href="mailto:sean@carn.llc">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">About</span>
+      <h1>The business behind the business.</h1>
+      <p>Why Carn exists, what we stand for, and who's doing the work.</p>
+    </div>
+  </section>
+
+  <section class="mission">
+    <div class="mission-inner">
+      <div class="mission-left">
+        <span class="eyebrow">The mission</span>
+        <h2>Make good local businesses stronger.</h2>
+        <p>Most small businesses are doing just fine with the tech they have — a POS, a website, an Instagram account. The problem isn't that the tools are wrong. It's that nobody has had the time to make them work harder.</p>
+        <p>Carn exists to fix that. We sit with local business owners, understand the specific friction in their day-to-day, and build quiet, durable solutions that absorb the complexity so they don't have to touch it.</p>
+        <p>The goal is never to impress anyone with technology. The goal is to make it disappear.</p>
+      </div>
+      <div class="mission-right">
+        <span class="mission-right-label">What we believe</span>
+        <blockquote>"Make good local businesses stronger — without ever making them feel small."</blockquote>
+        <p>Technology should serve the people behind it. Every tool we build, every report we create, every process we automate — it's in service of giving back time and clarity to the people who earned it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="name-section">
+    <div class="name-inner">
+      <div class="name-label" aria-hidden="true">cairn</div>
+      <div class="name-content">
+        <span class="eyebrow" style="color: var(--dark-moss);">Why Carn?</span>
+        <h2>A name that carries the work.</h2>
+        <p>A <em>carn</em> — the Irish and Gaelic root of "cairn" — is a stack of stones, built one at a time, by many hands, to mark the trail for whoever comes next.</p>
+        <p>The name carries the "stay stacking" ethos at the core of this business: keep building, keep compounding, and leave the path a little clearer for the next person. It also ties together the two halves of Sean's life — the sea he grew up on and the mountains he lives in now.</p>
+        <p>Every stone matters. Every client's business is worth doing right.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="principles-inner">
+      <span class="eyebrow">Guiding principles</span>
+      <h2>How Carn treats the people it serves.</h2>
+      <p>Not a mission statement — a standard. When a decision is unclear, this is what we check it against.</p>
+      <div class="principles-grid">
+        <div class="principle-item">
+          <span class="principle-num">1</span>
+          <div>
+            <h3>Main Street is the mission</h3>
+            <p>We do quality work for community businesses because they're our neighbors, not line items.</p>
+          </div>
+        </div>
+        <div class="principle-item">
+          <span class="principle-num">2</span>
+          <div>
+            <h3>Make the technology disappear</h3>
+            <p>We use technology so clients touch it less. We absorb the complexity; they get to focus on what they enjoy.</p>
+          </div>
+        </div>
+        <div class="principle-item">
+          <span class="principle-num">3</span>
+          <div>
+            <h3>Do one thing, brilliantly</h3>
+            <p>Pick the purpose, go deep. Scope creep is a tax on the clients counting on us.</p>
+          </div>
+        </div>
+        <div class="principle-item">
+          <span class="principle-num">4</span>
+          <div>
+            <h3>Amplify what makes them, them</h3>
+            <p>Our work pulls a business toward its strengths — never flattens it into a template.</p>
+          </div>
+        </div>
+        <div class="principle-item">
+          <span class="principle-num">5</span>
+          <div>
+            <h3>Value on their terms</h3>
+            <p>They're paying. We deliver the way they want it, at their pace, in their format.</p>
+          </div>
+        </div>
+        <div class="principle-item">
+          <span class="principle-num">6</span>
+          <div>
+            <h3>We lift, we don't leech</h3>
+            <p>We win only when our clients do. No lock-in, no dark patterns, no preying on the people who pay us.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sean-section">
+    <div class="sean-inner">
+      <div class="sean-header">
+        <div class="sean-avatar" aria-label="Sean Howley">SH
+          <!-- To add headshot: replace with <img src="headshot.jpg" alt="Sean Howley" style="width:140px;height:140px;border-radius:50%;object-fit:cover;" /> -->
+        </div>
+        <div class="sean-header-text">
+          <span class="eyebrow">The person behind Carn</span>
+          <h2>Sean Howley</h2>
+          <p class="title">Founder &amp; Sole Operator</p>
+          <div class="sean-links">
+            <a href="https://www.linkedin.com/in/sean-howley/" target="_blank" rel="noopener">LinkedIn ↗</a>
+            <!-- <a href="/resume.pdf" target="_blank" rel="noopener">Resume ↗</a> -->
+          </div>
+        </div>
+      </div>
+      <div class="sean-bio">
+        <div class="bio-block">
+          <h4>Education</h4>
+          <p>Computer Science &amp; Engineering from the University of Notre Dame.</p>
+        </div>
+        <div class="bio-block">
+          <h4>Professional background</h4>
+          <p>Two years at Deloitte, followed by a role as cloud automation consultant at Vertical Relevance, where he leads teams of 3–5 on large-scale cloud migrations for Fortune 200 companies.</p>
+        </div>
+        <div class="bio-block">
+          <h4>Outside of work</h4>
+          <p>Running ultramarathons, cycling in the mountains, snowboarding, cheering for the New York Mets and Knicks, and traveling to see friends and family in other cities.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div>
+        <h2>Want to work together?</h2>
+        <p>Reach out and tell us a little about your business.</p>
+      </div>
+      <a href="mailto:sean@carn.llc" class="btn btn-light">Get in touch</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Carn LLC</p>
+        <p>Boulder, CO</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Technology for Main Street.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:sean@carn.llc">sean@carn.llc</a></p>
+        <p><a href="https://www.linkedin.com/in/sean-howley/" target="_blank" rel="noopener">LinkedIn ↗</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Carn LLC. All rights reserved.</span>
+      <span>carn.llc</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

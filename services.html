@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Carn LLC</title>
+  <meta name="description" content="Carn LLC offers sales reporting, process automation, and tech stack cleanup for small, owner-operated businesses. Fixed-price, no surprises." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .approach {
+      background: var(--cornsilk);
+      padding: var(--section-pad);
+    }
+    .approach-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .approach-left h2 { margin-bottom: 1.25rem; }
+    .approach-left p { color: var(--dark-moss); }
+    .approach-callout {
+      background: var(--pakistan);
+      border-radius: 8px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .approach-callout p {
+      font-family: var(--font);
+      font-size: 1.05rem;
+      color: var(--earth);
+      font-style: italic;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .approach-note {
+      font-size: 0.875rem;
+      color: var(--dark-moss);
+      padding-left: 1rem;
+      border-left: 2px solid var(--dark-moss);
+    }
+
+    .pricing-note {
+      background: var(--pakistan);
+      padding: 1.5rem 2rem;
+    }
+    .pricing-note-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .pricing-note-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(96,108,56,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+      color: var(--earth);
+    }
+    .pricing-note-text p { font-size: 0.875rem; color: var(--cornsilk); margin: 0; opacity: 0.8; }
+    .pricing-note-text strong { color: var(--earth); font-weight: 500; }
+
+    .services {
+      background: var(--cornsilk);
+      padding: var(--section-pad);
+    }
+    .services-inner { max-width: var(--max-w); margin: 0 auto; }
+    .services-inner > h2 { margin-bottom: 0.5rem; }
+    .services-inner > p { color: var(--dark-moss); margin-bottom: 3.5rem; max-width: 520px; }
+    .service-cards { display: grid; gap: 1.5rem; }
+
+    .service-card {
+      background: white;
+      border: 0.5px solid rgba(40,54,24,0.12);
+      border-radius: 8px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    .service-card.flagship { border-color: var(--pakistan); border-width: 1.5px; }
+    .service-card-sidebar {
+      background: var(--pakistan);
+      padding: 2.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .service-card.flagship .service-card-sidebar { background: var(--pakistan); }
+    .service-badge {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 500;
+      background: rgba(221,161,94,0.2);
+      color: var(--earth);
+      padding: 3px 8px;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      width: fit-content;
+    }
+    .service-card-sidebar h3 {
+      font-family: var(--font);
+      font-size: 1.3rem;
+      color: var(--earth);
+      font-weight: normal;
+      margin-bottom: 0.5rem;
+    }
+    .service-card-sidebar .service-subtitle { font-size: 0.75rem; color: var(--dark-moss); letter-spacing: 0.05em; }
+    .service-price { margin-top: 2rem; }
+    .service-price .price-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark-moss);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .service-price .price-value { font-family: var(--font); font-size: 1.5rem; color: var(--earth); }
+
+    .service-card-body { padding: 2.5rem; background: var(--cornsilk); }
+    .service-card-body .what-it-is { font-size: 0.9rem; color: var(--dark-moss); margin-bottom: 2rem; line-height: 1.7; }
+    .deliverables-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--dark-moss);
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .deliverables { list-style: none; margin-bottom: 2rem; }
+    .deliverables li {
+      font-size: 0.875rem;
+      color: var(--pakistan);
+      padding: 0.5rem 0;
+      border-bottom: 0.5px solid rgba(40,54,24,0.1);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+    .deliverables li::before { content: "→"; color: var(--dark-moss); flex-shrink: 0; margin-top: 1px; }
+    .who-for {
+      background: rgba(96,108,56,0.1);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+    }
+    .who-for-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pakistan);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+      opacity: 0.6;
+    }
+    .who-for p { font-size: 0.875rem; color: var(--dark-moss); margin: 0; }
+
+    .beyond {
+      background: var(--dark-moss);
+      padding: var(--section-pad);
+    }
+    .beyond-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .beyond-left h2 { color: var(--cornsilk); margin-bottom: 1rem; }
+    .beyond-left p { color: var(--cornsilk); opacity: 0.8; }
+    .beyond-examples { list-style: none; }
+    .beyond-examples li {
+      padding: 0.85rem 0;
+      border-top: 0.5px solid rgba(254,250,224,0.2);
+      font-size: 0.9rem;
+      color: var(--cornsilk);
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+    .beyond-examples li::before { content: "—"; color: var(--earth); flex-shrink: 0; }
+    .beyond-examples li:last-child { border-bottom: 0.5px solid rgba(254,250,224,0.2); }
+
+    .cta-band {
+      background: var(--tigers-eye);
+      padding: 3.5rem 2rem;
+    }
+    .cta-band-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-band h2 { color: var(--cornsilk); font-size: 1.75rem; }
+    .cta-band p { color: rgba(254,250,224,0.75); margin: 0.4rem 0 0; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .approach-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .service-card { grid-template-columns: 1fr; }
+      .beyond-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .cta-band-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        Carn LLC
+        <span>Boulder, CO</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="nav-cta"><a href="mailto:sean@carn.llc">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="eyebrow">Services</span>
+      <h1>Built around your problems, not our packages.</h1>
+      <p>Every engagement starts with listening. The offerings below are where most clients begin — but they're starting points, not limits.</p>
+    </div>
+  </section>
+
+  <section class="approach">
+    <div class="approach-inner">
+      <div class="approach-left">
+        <span class="eyebrow">How we work</span>
+        <h2>We start with your business, not our solution.</h2>
+        <p>Before we propose anything, we sit down with you — in your shop, on your schedule — and listen. We want to understand what's eating your time, what decisions feel like guesswork, and what you'd do with an extra few hours a week.</p>
+        <p>From there, we design something for you specifically.</p>
+        <p>Some of the most valuable work we do isn't a packaged service at all — it's a small automation that eliminates a recurring chore, or a report that finally answers the question you've been guessing at for years.</p>
+      </div>
+      <div>
+        <div class="approach-callout">
+          <p>"If you don't see your problem below, reach out anyway. That's usually where the most interesting work begins."</p>
+        </div>
+        <p class="approach-note">There are far more creative, lightweight ways to leverage technology to save time than just creating and managing a website. The best solutions are often invisible — running quietly in the background while you focus on the parts you love.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="pricing-note">
+    <div class="pricing-note-inner">
+      <div class="pricing-note-icon" aria-hidden="true">◈</div>
+      <div class="pricing-note-text">
+        <p>All work is <strong>project-based with a fixed quote</strong> agreed before anything starts. No hourly meters, no scope creep surprises.</p>
+      </div>
+    </div>
+  </div>
+
+  <section class="services">
+    <div class="services-inner">
+      <span class="eyebrow">Offerings</span>
+      <h2>Where most clients start.</h2>
+      <p>Three focused offerings built around the patterns we see most often. Pick one, or reach out and we'll figure out what fits.</p>
+
+      <div class="service-cards">
+
+        <div class="service-card flagship">
+          <div class="service-card-sidebar">
+            <div>
+              <span class="service-badge">⭑ Flagship</span>
+              <h3>Your Business at a Glance</h3>
+              <p class="service-subtitle">Sales &amp; Performance Reporting</p>
+            </div>
+            <div class="service-price">
+              <span class="price-label">Starting at</span>
+              <span class="price-value">Contact for pricing</span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <p class="what-it-is">We take the data sitting inside your POS (Square, Toast, Clover, etc.) and turn it into a clean, plain-English reporting workbook that answers the questions you actually care about: <em>How much am I making? What am I making it on? When am I busiest?</em></p>
+            <p class="deliverables-label">What you get</p>
+            <ul class="deliverables">
+              <li>Revenue by day, week, and month — with trends visible at a glance</li>
+              <li>Best and slowest-selling items and categories</li>
+              <li>Busiest and slowest days and dayparts, so staffing and specials can follow the money</li>
+              <li>A margin view showing which items make money vs. just move volume</li>
+              <li>One interconnected workbook you can refresh yourself with a new export</li>
+            </ul>
+            <div class="who-for">
+              <p class="who-for-label">Who it's for</p>
+              <p>Any owner-operated business already on a modern POS who has never had a clear picture of their own numbers. You have the data — you just haven't had the time or the analyst to make sense of it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-sidebar">
+            <div>
+              <span class="service-badge">Offering 2</span>
+              <h3>Fix the Friction</h3>
+              <p class="service-subtitle">Process Automation &amp; Busywork Elimination</p>
+            </div>
+            <div class="service-price">
+              <span class="price-label">Starting at</span>
+              <span class="price-value">Contact for pricing</span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <p class="what-it-is">We identify the repetitive, manual tasks eating your week — menu updates, scheduling, follow-ups, reconciling numbers across systems — and build simple automations that handle them without you.</p>
+            <p class="deliverables-label">What you get</p>
+            <ul class="deliverables">
+              <li>A documented map of your current workflow and where time is leaking</li>
+              <li>Targeted automations for your highest-friction tasks</li>
+              <li>A handoff that's fully yours — no monthly fee to Carn for it to keep running</li>
+            </ul>
+            <div class="who-for">
+              <p class="who-for-label">Who it's for</p>
+              <p>Owners who feel like they're doing the same five things every week that a computer should be doing.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="service-card">
+          <div class="service-card-sidebar">
+            <div>
+              <span class="service-badge">Offering 3</span>
+              <h3>Make It Work Harder</h3>
+              <p class="service-subtitle">Tech Stack Cleanup &amp; Quick Wins</p>
+            </div>
+            <div class="service-price">
+              <span class="price-label">Starting at</span>
+              <span class="price-value">Contact for pricing</span>
+            </div>
+          </div>
+          <div class="service-card-body">
+            <p class="what-it-is">A focused audit and upgrade of the tools you already have — your website, your POS setup, your booking or ordering flow. Most small businesses set these up once and never revisited them. We find where they're leaking time or customers and fix it.</p>
+            <p class="deliverables-label">What you get</p>
+            <ul class="deliverables">
+              <li>A review of your current tools and configuration</li>
+              <li>A prioritized list of quick wins, ranked by impact vs. effort</li>
+              <li>Implementation of the top 2–3 fixes</li>
+            </ul>
+            <div class="who-for">
+              <p class="who-for-label">Who it's for</p>
+              <p>Businesses that feel like their tech is "fine" but sense there's more to squeeze from what they already pay for.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="beyond">
+    <div class="beyond-inner">
+      <div class="beyond-left">
+        <span class="eyebrow" style="color: var(--earth); opacity: 0.8;">Beyond the packages</span>
+        <h2>The most interesting work rarely fits a menu.</h2>
+        <p>Technology can quietly transform a business in ways that never show up in a service list. These are the kinds of things we love doing — and the things clients often don't know to ask for.</p>
+      </div>
+      <div>
+        <ul class="beyond-examples">
+          <li>A QR code menu that updates automatically when prices change, no website editing required</li>
+          <li>An email that goes out every Monday morning summarizing last week's sales without anyone lifting a finger</li>
+          <li>A simple form that logs and routes customer inquiries so nothing falls through the cracks</li>
+          <li>An inventory alert that texts you when a top-selling item is running low</li>
+          <li>A one-click report that turns raw POS data into a weekly snapshot for the owner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div>
+        <h2>Not sure where to start?</h2>
+        <p>That's what the first conversation is for. No pitch, no pressure.</p>
+      </div>
+      <a href="mailto:sean@carn.llc" class="btn btn-light">Get in touch</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Carn LLC</p>
+        <p>Boulder, CO</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Technology for Main Street.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:sean@carn.llc">sean@carn.llc</a></p>
+        <p><a href="https://www.linkedin.com/in/sean-howley/" target="_blank" rel="noopener">LinkedIn ↗</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Carn LLC. All rights reserved.</span>
+      <span>carn.llc</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

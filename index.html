@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carn LLC — Technology for Main Street</title>
+  <meta name="description" content="Carn LLC brings world-class technology and automation skills to small, owner-operated businesses in Boulder, CO and beyond." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .hero {
+      background: var(--cornsilk);
+      padding: 6rem 2rem 5rem;
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-content h1 { margin-bottom: 1.25rem; }
+    .hero-content p {
+      font-size: 1.05rem;
+      color: var(--dark-moss);
+      max-width: 460px;
+      margin-bottom: 2rem;
+    }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+    .hero-aside {
+      background: var(--pakistan);
+      border-radius: 8px;
+      padding: 2.5rem;
+    }
+    .hero-aside-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dark-moss);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: block;
+    }
+    .hero-aside blockquote {
+      font-family: var(--font);
+      font-size: 1.15rem;
+      color: var(--earth);
+      line-height: 1.6;
+      font-style: italic;
+      border-left: 2px solid var(--dark-moss);
+      padding-left: 1.25rem;
+    }
+
+    .values {
+      background: var(--pakistan);
+      padding: var(--section-pad);
+    }
+    .values-inner { max-width: var(--max-w); margin: 0 auto; }
+    .values-header {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .values-header h2 { color: var(--earth); }
+    .values-header p { font-size: 0.9rem; color: var(--dark-moss); max-width: 340px; margin: 0; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .value-card { border-top: 1px solid rgba(96,108,56,0.3); padding-top: 1.25rem; }
+    .value-num { font-size: 0.65rem; letter-spacing: 0.1em; color: var(--dark-moss); font-weight: 500; margin-bottom: 0.6rem; }
+    .value-card h3 { color: var(--earth); margin-bottom: 0.5rem; font-size: 1rem; }
+    .value-card p { font-size: 0.875rem; color: #7A8C50; margin: 0; line-height: 1.65; }
+
+    .services-preview {
+      background: var(--dark-moss);
+      padding: var(--section-pad);
+    }
+    .services-preview-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .services-preview-left h2 { color: var(--cornsilk); margin-bottom: 1rem; }
+    .services-preview-left p { color: var(--cornsilk); opacity: 0.8; margin-bottom: 1.5rem; }
+    .services-list { list-style: none; }
+    .services-list li {
+      border-top: 0.5px solid rgba(254,250,224,0.2);
+      padding: 1rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .services-list li:last-child { border-bottom: 0.5px solid rgba(254,250,224,0.2); }
+    .services-list .service-name { font-size: 0.9rem; color: var(--cornsilk); font-weight: 500; }
+    .services-list .service-arrow { color: var(--earth); font-size: 1.1rem; }
+
+    .about-teaser {
+      background: var(--earth);
+      padding: var(--section-pad);
+    }
+    .about-teaser-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    .about-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--pakistan);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--earth);
+      font-family: var(--font);
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .about-teaser-text h2 { color: var(--pakistan); margin-bottom: 0.75rem; font-size: 1.5rem; }
+    .about-teaser-text .role {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--pakistan);
+      opacity: 0.6;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .about-teaser-text p { color: #4A3010; max-width: 560px; }
+    .about-teaser-links { display: flex; gap: 1.25rem; margin-top: 1.25rem; flex-wrap: wrap; }
+    .about-teaser-links a {
+      font-size: 0.875rem;
+      color: var(--pakistan);
+      border-bottom: 1px solid var(--pakistan);
+      padding-bottom: 1px;
+      font-weight: 500;
+    }
+
+    .cta-band {
+      background: var(--tigers-eye);
+      padding: 3.5rem 2rem;
+    }
+    .cta-band-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .cta-band h2 { color: var(--cornsilk); font-size: 1.75rem; }
+    .cta-band p { color: rgba(254,250,224,0.75); margin: 0.4rem 0 0; font-size: 0.9rem; }
+
+    @media (max-width: 768px) {
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .values-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .values-header { flex-direction: column; align-items: flex-start; }
+      .services-preview-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .about-teaser-inner { grid-template-columns: 1fr; }
+      .about-avatar { width: 80px; height: 80px; font-size: 1.5rem; }
+      .cta-band-inner { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        Carn LLC
+        <span>Boulder, CO</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" id="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li class="nav-cta"><a href="mailto:sean@carn.llc">Get in touch</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="eyebrow">Boulder, CO — Serving local businesses</span>
+        <h1>Fortune 500 experience, built for Main Street.</h1>
+        <p>Carn helps small, owner-operated businesses use technology to run more efficiently — so you can spend less time on the business and more time on what you love.</p>
+        <div class="hero-ctas">
+          <a href="services.html" class="btn btn-dark">See how we help</a>
+          <a href="about.html" class="btn btn-outline">About Carn</a>
+        </div>
+      </div>
+      <div class="hero-aside">
+        <p class="hero-aside-label">Why Carn?</p>
+        <blockquote>
+          A carn is a stack of stones — built one at a time, by many hands, to mark the trail for whoever comes next.
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <section class="values">
+    <div class="values-inner">
+      <div class="values-header">
+        <h2>How we show up</h2>
+        <p>The principles that guide every engagement, every decision, every conversation.</p>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <p class="value-num">01</p>
+          <h3>Main Street is the mission</h3>
+          <p>We do quality work for community businesses because they're our neighbors, not line items.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-num">02</p>
+          <h3>Make the technology disappear</h3>
+          <p>We absorb the complexity. You get to focus on what you're actually good at.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-num">03</p>
+          <h3>Do one thing, brilliantly</h3>
+          <p>Scope creep is a tax on the people counting on us. We pick the purpose and go deep.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-num">04</p>
+          <h3>Amplify what makes them, them</h3>
+          <p>Our work pulls a business toward its strengths — never flattens it into a template.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-num">05</p>
+          <h3>Value on their terms</h3>
+          <p>We deliver the way clients want it, at their pace, in their format. They're paying.</p>
+        </div>
+        <div class="value-card">
+          <p class="value-num">06</p>
+          <h3>We lift, we don't leech</h3>
+          <p>Fixed quotes. No lock-in. No dark patterns. We win only when our clients do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services-preview">
+    <div class="services-preview-inner">
+      <div class="services-preview-left">
+        <span class="eyebrow" style="color: var(--cornsilk); opacity: 0.55;">What we do</span>
+        <h2>From your data to your decisions.</h2>
+        <p>We start by listening — then build something specific to your business. The packages below are the most common starting points. But some of the best work we do is quieter than any of them.</p>
+        <a href="services.html" class="btn btn-tan">View all services</a>
+      </div>
+      <div>
+        <ul class="services-list">
+          <li>
+            <span class="service-name">Sales &amp; performance reporting</span>
+            <span class="service-arrow">→</span>
+          </li>
+          <li>
+            <span class="service-name">Process automation &amp; busywork elimination</span>
+            <span class="service-arrow">→</span>
+          </li>
+          <li>
+            <span class="service-name">Tech stack cleanup &amp; quick wins</span>
+            <span class="service-arrow">→</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-teaser">
+    <div class="about-teaser-inner">
+      <div class="about-avatar" aria-hidden="true">SH</div>
+      <div class="about-teaser-text">
+        <span class="role">Founder &amp; Sole Operator</span>
+        <h2>Sean Howley</h2>
+        <p>CS &amp; Engineering from Notre Dame. Two years at Deloitte, then leading Fortune 200 cloud migrations at Vertical Relevance. Carn is what happens when those skills come home to the neighborhood.</p>
+        <div class="about-teaser-links">
+          <a href="about.html">Full story →</a>
+          <a href="https://www.linkedin.com/in/sean-howley/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="cta-band-inner">
+      <div>
+        <h2>Not sure where to start?</h2>
+        <p>That's what the first conversation is for.</p>
+      </div>
+      <a href="mailto:sean@carn.llc" class="btn btn-light">Get in touch</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Carn LLC</p>
+        <p>Boulder, CO</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Technology for Main Street.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Pages</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:sean@carn.llc">sean@carn.llc</a></p>
+        <p><a href="https://www.linkedin.com/in/sean-howley/" target="_blank" rel="noopener">LinkedIn ↗</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Carn LLC. All rights reserved.</span>
+      <span>carn.llc</span>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
