@@ -230,7 +230,7 @@
       <ul class="nav-links" id="nav-links">
         <li><a href="about.html">About Carn</a></li>
         <li><a href="services.html">Our Services</a></li>
-        <li class="nav-cta"><a href="mailto:sean@carn.llc">Get in touch</a></li>
+        <li class="nav-cta"><a href="#" class="open-contact-modal">Get in touch</a></li>
       </ul>
     </div>
   </nav>
@@ -381,7 +381,7 @@
         <h2>Not sure where to start?</h2>
         <p>That's what the first conversation is for. No pitch, no pressure.</p>
       </div>
-      <a href="mailto:sean@carn.llc" class="btn btn-light">Get in touch</a>
+      <a href="#" class="btn btn-light open-contact-modal">Get in touch</a>
     </div>
   </section>
 
@@ -411,6 +411,31 @@
       <span>carn.llc</span>
     </div>
   </footer>
+
+  <!-- Contact Modal -->
+  <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-label="Contact form">
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+      <span class="hero-aside-label">Start a conversation</span>
+      <h3>Let's talk about your business</h3>
+      <form id="modal-contact-form" action="https://formspree.io/f/mbdebvpv" method="POST">
+        <div class="form-group">
+          <label for="modal-name">Name</label>
+          <input type="text" id="modal-name" name="name" required placeholder="Your name" autocomplete="name" />
+        </div>
+        <div class="form-group">
+          <label for="modal-email">Email</label>
+          <input type="email" id="modal-email" name="email" required placeholder="you@example.com" autocomplete="email" />
+        </div>
+        <div class="form-group">
+          <label for="modal-message">Message</label>
+          <textarea id="modal-message" name="message" required placeholder="Tell me a bit about your business…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-tan form-submit">Send message →</button>
+        <p class="form-success" id="modal-form-success">Thanks! I'll be in touch soon.</p>
+      </form>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>

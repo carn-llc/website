@@ -10,7 +10,6 @@ if (toggle && navLinks) {
     toggle.setAttribute('aria-expanded', isOpen);
   });
 
-  // Close nav when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navLinks.classList.remove('open');
@@ -27,36 +26,85 @@ document.addEventListener('click', (e) => {
   }
 });
 
-// Contact form — async Formspree submission
-const contactForm = document.getElementById('contact-form');
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
+// Contact modal
+const modal = document.getElementById('contact-modal');
 
-    try {
-      const res = await fetch(contactForm.action, {
-        method: 'POST',
-        body: new FormData(contactForm),
-        headers: { Accept: 'application/json' },
-      });
+function openModal() {
+  modal.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  modal.querySelector('input, textarea').focus();
+}
 
-      if (res.ok) {
-        contactForm.reset();
-        document.getElementById('form-success').style.display = 'block';
-        btn.style.display = 'none';
-      } else {
-        btn.disabled = false;
-        btn.textContent = 'Send message →';
-        alert('Something went wrong — please email sean@carn.llc directly.');
-      }
-    } catch {
+function closeModal() {
+  modal.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+if (modal) {
+  // Open on any trigger button
+  document.querySelectorAll('.open-contact-modal').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal();
+    });
+  });
+
+  // Close on X button
+  document.getElementById('modal-close').addEventListener('click', closeModal);
+
+  // Close on overlay click (outside the card)
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}
+
+// Async Formspree submission — handles any form with a formspree action
+async function handleFormSubmit(form, successId) {
+  const btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.textContent = 'Sending…';
+
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+
+    if (res.ok) {
+      form.reset();
+      document.getElementById(successId).style.display = 'block';
+      btn.style.display = 'none';
+    } else {
       btn.disabled = false;
       btn.textContent = 'Send message →';
       alert('Something went wrong — please email sean@carn.llc directly.');
     }
+  } catch {
+    btn.disabled = false;
+    btn.textContent = 'Send message →';
+    alert('Something went wrong — please email sean@carn.llc directly.');
+  }
+}
+
+const heroForm = document.getElementById('contact-form');
+if (heroForm) {
+  heroForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleFormSubmit(heroForm, 'form-success');
+  });
+}
+
+const modalForm = document.getElementById('modal-contact-form');
+if (modalForm) {
+  modalForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    handleFormSubmit(modalForm, 'modal-form-success');
   });
 }
 
