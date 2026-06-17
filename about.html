@@ -70,6 +70,36 @@
     .name-content p { color: var(--cornsilk); opacity: 0.75; }
     .name-content p + p { margin-top: 0.75rem; }
 
+    .origin-story {
+      background: var(--tigers-eye);
+      padding: var(--section-pad);
+    }
+    .origin-story-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 5rem;
+      align-items: start;
+    }
+    .origin-story-inner h2 {
+      font-family: var(--font);
+      color: var(--cornsilk);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+    }
+    .origin-story-inner .eyebrow { color: rgba(254,250,224,0.55); }
+    .origin-story-body p {
+      color: rgba(254,250,224,0.85);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 1.25rem;
+    }
+    .origin-story-body p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 768px) {
+      .origin-story-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
     .sean-section {
       background: var(--earth);
       padding: var(--section-pad);
@@ -190,6 +220,20 @@
     </div>
   </section>
 
+  <section class="origin-story">
+    <div class="origin-story-inner">
+      <div>
+        <span class="eyebrow">Origin Story</span>
+        <h2>How Carn came to be.</h2>
+      </div>
+      <div class="origin-story-body">
+        <p>My passion for applying creativity, technical skills, and business thinking to interesting problems started close to home — I spent years finding ways to make my own day-to-day life run more efficiently.</p>
+        <p>Eventually I ran out of problems to solve for myself, so I started building things for friends and family — tools and automation to make their personal lives and jobs a little easier.</p>
+        <p>Carn is the next logical step: taking that same passion and turning it outward, as a way to engage with and give back to the local communities I am a part of.</p>
+      </div>
+    </div>
+  </section>
+
   <section class="sean-section">
     <div class="sean-inner">
       <div class="sean-header">
@@ -213,7 +257,10 @@
         </div>
         <div class="bio-block">
           <h4>Professional background</h4>
-          <p>Two years at Deloitte, followed by a role as cloud automation consultant at Vertical Relevance, where he leads teams of 3–5 on large-scale cloud migrations for Fortune 200 companies.</p>
+          <p>
+            <li>2 years developing automatedcloud solutions at Deloitte</li> 
+            <li>5 years leading automation-focused cloud migrations for Fortune 500 companies</li>
+          </p>
         </div>
         <div class="bio-block">
           <h4>Outside of work</h4>
