@@ -27,6 +27,39 @@ document.addEventListener('click', (e) => {
   }
 });
 
+// Contact form — async Formspree submission
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = contactForm.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+
+    try {
+      const res = await fetch(contactForm.action, {
+        method: 'POST',
+        body: new FormData(contactForm),
+        headers: { Accept: 'application/json' },
+      });
+
+      if (res.ok) {
+        contactForm.reset();
+        document.getElementById('form-success').style.display = 'block';
+        btn.style.display = 'none';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send message →';
+        alert('Something went wrong — please email sean@carn.llc directly.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send message →';
+      alert('Something went wrong — please email sean@carn.llc directly.');
+    }
+  });
+}
+
 // Highlight active nav link
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(link => {
