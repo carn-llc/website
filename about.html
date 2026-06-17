@@ -30,7 +30,7 @@
       font-size: 0.65rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      color: var(--dark-moss);
+      color: var(--earth);
       font-weight: 500;
       margin-bottom: 1rem;
       display: block;
@@ -45,7 +45,7 @@
       padding-left: 1.25rem;
       margin-bottom: 1rem;
     }
-    .mission-right p { font-size: 0.875rem; color: var(--dark-moss); }
+    .mission-right p { font-size: 0.875rem; color: var(--earth); }
 
     .name-section {
       background: var(--pakistan);
@@ -69,29 +69,6 @@
     .name-content h2 { color: var(--earth); margin-bottom: 1.25rem; }
     .name-content p { color: var(--cornsilk); opacity: 0.75; }
     .name-content p + p { margin-top: 0.75rem; }
-
-    .principles {
-      background: var(--cornsilk);
-      padding: var(--section-pad);
-    }
-    .principles-inner { max-width: var(--max-w); margin: 0 auto; }
-    .principles-inner > h2 { margin-bottom: 0.5rem; }
-    .principles-inner > p { color: var(--dark-moss); margin-bottom: 3rem; max-width: 480px; }
-    .principles-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
-    .principle-item {
-      border-top: 0.5px solid rgba(40,54,24,0.15);
-      padding: 1.75rem 2rem 1.75rem 0;
-      display: grid;
-      grid-template-columns: 2rem 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-    .principle-item:nth-child(even) { padding-left: 2rem; border-left: 0.5px solid rgba(40,54,24,0.15); }
-    .principle-item:last-child,
-    .principle-item:nth-last-child(2):nth-child(odd) { border-bottom: 0.5px solid rgba(40,54,24,0.15); }
-    .principle-num { font-size: 0.75rem; font-weight: 500; color: var(--dark-moss); padding-top: 3px; }
-    .principle-item h3 { font-size: 1rem; margin-bottom: 0.4rem; font-family: var(--font-sans); font-weight: 500; }
-    .principle-item p { font-size: 0.875rem; color: var(--dark-moss); margin: 0; }
 
     .sean-section {
       background: var(--earth);
@@ -164,9 +141,7 @@
       .mission-inner { grid-template-columns: 1fr; gap: 2.5rem; }
       .name-inner { grid-template-columns: 1fr; gap: 1rem; }
       .name-label { font-size: 2.5rem; }
-      .principles-grid { grid-template-columns: 1fr; }
-      .principle-item:nth-child(even) { padding-left: 0; border-left: none; }
-      .sean-header { grid-template-columns: 1fr; }
+.sean-header { grid-template-columns: 1fr; }
       .sean-bio { grid-template-columns: 1fr; }
       .cta-band-inner { flex-direction: column; align-items: flex-start; }
     }
@@ -194,7 +169,7 @@
   <section class="page-hero">
     <div class="page-hero-inner">
       <span class="eyebrow">About</span>
-      <h1>The business behind the business.</h1>
+      <h1>The Story Behind Carn</h1>
       <p>Why Carn exists, what we stand for, and who's doing the work.</p>
     </div>
   </section>
@@ -211,37 +186,6 @@
       <div class="mission-right">
         <span class="mission-right-label">Why Cairn?</span>
         <p>Carn is Gaelic for the word Cairn — a navigational trail marker in the wilderness. Like a Cairn, we strive to be your guide to go even further with the technology and data you have.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="principles">
-    <div class="principles-inner">
-      <span class="eyebrow">Guiding principles</span>
-      <h2>How Carn treats the people it serves.</h2>
-      <p>Not a mission statement — a standard. When a decision is unclear, this is what we check it against.</p>
-      <div class="principles-grid">
-        <div class="principle-item">
-          <span class="principle-num">1</span>
-          <div>
-            <h3>Main Street is the mission</h3>
-            <p>We do quality work for community businesses because they're our neighbors, not line items.</p>
-          </div>
-        </div>
-        <div class="principle-item">
-          <span class="principle-num">2</span>
-          <div>
-            <h3>Make the technology disappear</h3>
-            <p>We use technology so clients touch it less. We absorb the complexity; they get to focus on what they enjoy.</p>
-          </div>
-        </div>
-        <div class="principle-item">
-          <span class="principle-num">3</span>
-          <div>
-            <h3>Amplify what makes them, them</h3>
-            <p>Our work pulls a business toward its strengths — never flattens it into a template.</p>
-          </div>
-        </div>
       </div>
     </div>
   </section>
