@@ -148,6 +148,7 @@ p:last-child { margin-bottom: 0; }
   transition: opacity 0.15s;
 }
 .nav-links a:hover { opacity: 1; }
+.nav-links a.active { opacity: 1; }
 .nav-links .nav-cta a {
   opacity: 1;
   background: var(--tigers-eye);
